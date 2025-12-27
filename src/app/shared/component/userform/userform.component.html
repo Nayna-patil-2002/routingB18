@@ -1,0 +1,49 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>{{isInEditMode?"Update User":"Add user"}}</h2> 
+        </div>
+    </div>
+    <div class="row">  
+     
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                 <form [formGroup]="userForm" (ngSubmit)="addUser()">
+                     <mat-form-field appearance="fill">
+                     <mat-label>Name</mat-label> 
+                     <input matInput formControlName="name">
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                     <mat-label>Email</mat-label> 
+                     <input matInput formControlName="email">
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                     <mat-label>Image</mat-label> 
+                     <input matInput formControlName="image">
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-select formControlName="role">
+                          <mat-option value="Admin">Admin</mat-option>
+                          <mat-option value="SuperAdmin">SuperAdmin</mat-option>
+                          <mat-option value="User">User</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                      <div class="d-flex justify-content-between">
+                         <button mat-raised-button color="primary" *ngIf="!isInEditMode" type="submit">
+                         <mat-icon>check</mat-icon>Add user</button>
+                         <button mat-raised-button color="accent" *ngIf="isInEditMode" type="button" (click)="onUpdate()">
+                         <mat-icon>check</mat-icon>update user</button>
+                       <button mat-raised-button color="warn">
+                       <mat-icon>close</mat-icon></button>  
+                      </div>
+                    
+                </form>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</div>

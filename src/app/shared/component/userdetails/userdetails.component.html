@@ -1,0 +1,32 @@
+  <div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+           
+            <mat-card>
+                <mat-card-header>
+                    <h1>{{userInfo.name}}</h1>
+                </mat-card-header>
+                <mat-card-content>
+
+                    <div class="row">
+                        <div class="col-md-8 content">
+                            <p>{{userInfo.email}}</p>
+                           <p>{{userInfo.role}}</p>
+                        </div>
+                        <div class="col-md-4">
+                         <img [src]="userInfo.image">
+                        </div>
+                    </div>
+                    
+                </mat-card-content>
+
+                <mat-card-actions class="d-flex justify-content-between">
+                    <button mat-raised-button class="bg-red" routerLink="edituser">
+                   <mat-icon>edit</mat-icon></button>
+                    <button mat-raised-button class="bg-red" (click)="onRemove()">
+                   <mat-icon>delete</mat-icon></button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+  </div>
