@@ -7,8 +7,8 @@
                    <mat-icon>add</mat-icon></button> 
         </div>
     </div>
-    <div class="row">
-               <div class="col-md-6">
+    <div class="row" >
+               <div class="col-md-6" *ngIf="userObj && userObj.length > 0; else noUser">
          <ul class="list-group">
             <li class="list-group-item" *ngFor="let user of userObj" [routerLink]="['/user', user.id]">
                 {{user.name}}
@@ -18,5 +18,10 @@
         <div class="col-md-6">
 
         </div>
+        <ng-template #noUser>
+         <P class="alert alert-info">No user Added here!!</P>
+    </ng-template>
     </div>
+
+    
   </div>

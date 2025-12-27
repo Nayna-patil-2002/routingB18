@@ -14,6 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { GetconfirmComponent } from './shared/component/getconfirm/getconfirm.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LoaderInterceptor } from './loader.interceptor';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,13 @@ import { GetconfirmComponent } from './shared/component/getconfirm/getconfirm.co
     MaterialModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:LoaderInterceptor,
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
