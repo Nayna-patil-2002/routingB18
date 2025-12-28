@@ -1,0 +1,14 @@
+  
+
+  <div class="mb-3">
+  <img [src]="firsInfo.bannerUrl" class="img-fluid">
+       <div class="para">
+            
+                    <p>Event Type: {{firsInfo.type}}</p>
+                 <p>Date: {{firsInfo.endDate * 1000 | date }}</p>
+       </div>
+
+ 
+</div>
+
+ <div [innerHTML]="firsInfo.schoolDescription"></div>

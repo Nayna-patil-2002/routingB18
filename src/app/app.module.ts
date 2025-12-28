@@ -16,6 +16,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { GetconfirmComponent } from './shared/component/getconfirm/getconfirm.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoaderInterceptor } from './loader.interceptor';
+import { FairsDsahboardComponent } from './shared/component/fairs-dsahboard/fairs-dsahboard.component';
+import { FairCardComponent } from './shared/component/fair-card/fair-card.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { LoaderInterceptor } from './loader.interceptor';
     UserdetailsComponent,
     UserformComponent,
     NavbarComponent,
-    GetconfirmComponent
+    GetconfirmComponent,
+    FairsDsahboardComponent,
+    FairCardComponent
   ],
   imports: [
     BrowserModule,

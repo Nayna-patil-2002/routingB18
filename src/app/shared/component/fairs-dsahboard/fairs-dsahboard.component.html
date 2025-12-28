@@ -1,0 +1,23 @@
+
+  <h3>FAIRS</h3>
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4" >
+            <mat-card *ngFor="let f of fairs" [routerLink]="[f.fairId]">
+                <mat-card-content>
+                    <h1>{{f.fairName}}</h1>
+                    <div class="para">
+                        <p>Event Type: {{f.type}}</p>
+                     <p>Date: {{ f.endDate * 1000 | date }}</p>
+
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+        <div class="col-md-8">
+          <router-outlet></router-outlet>
+          
+        </div>
+    </div>
+  </div>
