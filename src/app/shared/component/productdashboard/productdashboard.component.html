@@ -1,0 +1,17 @@
+<div class="container mt-5">
+    <button mat-raised-button color="accent" class="mb-3" (click)="onForm()">Add product</button>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let product of productarr" (click)="onCard(product.id)">
+                     {{product.name}}
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-md-6">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

@@ -18,6 +18,8 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoaderInterceptor } from './loader.interceptor';
 import { FairsDsahboardComponent } from './shared/component/fairs-dsahboard/fairs-dsahboard.component';
 import { FairCardComponent } from './shared/component/fair-card/fair-card.component';
+import { ProductdashboardComponent } from './shared/component/productdashboard/productdashboard.component';
+import { ProductformComponent } from './shared/component/productform/productform.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { FairCardComponent } from './shared/component/fair-card/fair-card.compon
     NavbarComponent,
     GetconfirmComponent,
     FairsDsahboardComponent,
-    FairCardComponent
+    FairCardComponent,
+    ProductdashboardComponent,
+    ProductformComponent
   ],
   imports: [
     BrowserModule,

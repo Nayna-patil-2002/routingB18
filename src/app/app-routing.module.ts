@@ -8,6 +8,8 @@ import { UserformComponent } from './shared/component/userform/userform.componen
 import { UserdetailsComponent } from './shared/component/userdetails/userdetails.component';
 import { FairsDsahboardComponent } from './shared/component/fairs-dsahboard/fairs-dsahboard.component';
 import { FairCardComponent } from './shared/component/fair-card/fair-card.component';
+import { ProductdashboardComponent } from './shared/component/productdashboard/productdashboard.component';
+import { ProductformComponent } from './shared/component/productform/productform.component';
 
 const routes: Routes = [
 
@@ -38,7 +40,24 @@ const routes: Routes = [
   },
    {
     path:"product",
-    component:ProductComponent
+    component:ProductdashboardComponent,
+    children:[
+      {
+            path:"addproduct",
+            component:ProductformComponent
+      },
+      {
+        path:":productId",
+        component:ProductComponent
+      },
+      {
+        path:":productId/editProduct",
+        component:ProductformComponent
+      }
+    
+
+    ]
+    
   },
    {
     path:"fairs",

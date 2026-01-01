@@ -1,0 +1,33 @@
+
+
+<div class="card">
+    <div class="card-body">
+        <form [formGroup]="productForm" (ngSubmit)="onProductAdd()">
+        <mat-form-field appearance="fill">
+            <mat-label>name</mat-label>
+            <input matInput formControlName="name">
+        </mat-form-field>
+         <mat-form-field appearance="fill">
+            <mat-label>Price</mat-label>
+            <input matInput formControlName="price">
+        </mat-form-field>
+         <mat-form-field appearance="fill">
+            <mat-label>Quantity</mat-label>
+            <input matInput formControlName="quantity">
+        </mat-form-field>
+         <mat-form-field appearance="fill">
+            <mat-label>Status</mat-label>
+            <mat-select formControlName="status">
+              <mat-option value="Pending">Pending</mat-option>
+              <mat-option value="Dispatched">Dispatched</mat-option>
+              <mat-option value="Delivered">Delivered</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button mat-raised-button color="accent" *ngIf="!isIneditMode" type="submit">Add Product</button>
+        <button mat-raised-button color="accent" *ngIf="isIneditMode" (click)="onUpdate()" type="button">Update Product</button>
+        </form>
+        
+    </div>
+</div>
+
+ 
